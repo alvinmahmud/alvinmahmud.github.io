@@ -1,5 +1,5 @@
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hi! I’m Alvin Mahmud, a software engineer based in Staten Island, NYC. I’m currently focused on building full stack web apps, sharpening my skills and exploring new technologies. Currently I’ve been picking up experience through hands-on projects, DS&A practice and staying curious.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Outside of coding, I’m really into basketball, hitting the gym, and playing video games. I’m a big fan of hip-hop and R&B; Blxst is always in my rotation, along with artists like Andre 3000, Lil Tecca, and Frank Ocean. When I’m not working on side projects or fixing mysterious bugs, I’m probably watching highlights or trying out a new recipe.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I’m always open to connect or collaborate! Feel free to reach out via email or check out some of my featured work here on the site. You can also find me on [GitHub](https://github.com/alvinmahmud) or [LinkedIn](https://www.linkedin.com/in/alvin-mahmud/) where I share my code and progress to my network.

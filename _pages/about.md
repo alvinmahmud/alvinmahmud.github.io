@@ -2,14 +2,16 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle:
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Based in New York, NY</p>
+    <div style="text-align: center;">
+      <p>Based in New York, NY</p>
+    </div>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -25,8 +27,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hi! I’m Alvin, a software engineer based in Staten Island, NYC. I’m currently focused on building full stack web apps, sharpening my skills and exploring new technologies. 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Currently I’ve been picking up experience through hands-on projects, DS&A practice and staying curious.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Outside of coding, I’m really into basketball, hitting the gym, and playing video games. I’m a big fan of hip-hop and R&B; Blxst is always in my rotation, along with artists like Andre 3000, Lil Tecca, and Frank Ocean.
+
+I’m always open to connect or collaborate! Feel free to reach out via [email](mailto:alvin.mahmud@gmail.com) or check out some of my featured work here on the site. 
+
+You can also find me on [GitHub](https://github.com/alvinmahmud) or [LinkedIn](https://www.linkedin.com/in/alvin-mahmud/) where I share my code and progress to my network. Thanks for stopping by!
