@@ -10,8 +10,6 @@ This repo hosts my personal portfolio website.
 - Projects
 - Contact Info
 
-Feel free to explore or check out my pinned repositories for featured projects.
-
 ---
 
 > Built using [Jekyll](https://jekyllrb.com/) with the [al-folio](https://github.com/alshedivat/al-folio) theme. Hosted via GitHub Pages.
