@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Personal site is up and running!
+Personal site has been created!

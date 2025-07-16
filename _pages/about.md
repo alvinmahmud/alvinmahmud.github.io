@@ -13,7 +13,7 @@ profile:
       <p>Based in New York, NY</p>
     </div>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -31,7 +31,7 @@ Hi! I’m Alvin, a software engineer based in Staten Island, NYC. I’m currentl
 
 Currently I’ve been picking up experience through hands-on projects, DS&A practice and staying curious.
 
-Outside of coding, I’m really into basketball, hitting the gym, and playing video games. I’m a big fan of hip-hop and R&B; Blxst is always in my rotation, along with artists like Andre 3000, Lil Tecca, and Frank Ocean.
+Outside of coding, I’m really into basketball, hitting the gym, and playing video games. I’m a big fan of hip-hop and R&B; Blxst is always in my rotation, along with artists like André 3000, Lil Tecca, and Frank Ocean.
 
 I’m always open to connect or collaborate! Feel free to reach out via [email](mailto:alvin.mahmud@gmail.com) or check out some of my featured work here on the site. 
 

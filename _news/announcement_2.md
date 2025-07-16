@@ -1,33 +1,33 @@
 ---
 layout: post
-title: A long announcement with details
+title: My First Announcement
 date: 2025-07-08
 inline: false
 related_posts: false
 ---
 
-Announcements and news can be much longer than just quick inline posts. In fact, they can have all the features available for the standard blog posts. See below.
+I turned 26 today and finally have my portfolio up and running!
 
 ---
 
-Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.
+Currently working on a full stack Media Backlog project using Node.js, Express, and MongoDB on the backend, with a React frontend. It’s helping me get more comfortable with REST APIs, database modeling, and managing a full dev workflow. Outside of that, I’m brushing up on TypeScript, diving deeper into testing best practices, and learning more about AWS and deployment.
 
-#### Hipster list
+#### Frameworks/Technologies I plan on exploring:
 
 <ul>
-    <li>brunch</li>
-    <li>fixie</li>
-    <li>raybans</li>
-    <li>messenger bag</li>
+  <li>Go</li>
+  <li>Docker</li>
+  <li>AWS (EC2, S3, Lambda)</li>
+  <li>Next.js</li>
 </ul>
 
-Hoodie Thundercats retro, tote bag 8-bit Godard craft beer gastropub. Truffaut Tumblr taxidermy, raw denim Kickstarter sartorial dreamcatcher. Quinoa chambray slow-carb salvia readymade, bicycle rights 90's yr typewriter selfies letterpress cardigan vegan.
+These are just some of the ones that come to mind. Of course there are tons more that I hope to learn as throughout my journey as an engineer. The market and field changes at an incredible pace, there's always something to learn. It's why I love software development so much.
 
 ---
 
-Pug heirloom High Life vinyl swag, single-origin coffee four dollar toast taxidermy reprehenderit fap distillery master cleanse locavore. Est anim sapiente leggings Brooklyn ea. Thundercats locavore excepteur veniam eiusmod. Raw denim Truffaut Schlitz, migas sapiente Portland VHS twee Bushwick Marfa typewriter retro id keytar.
+I'm also going to follow the trend and share a quote I really love as well:
 
-> We do not grow absolutely, chronologically. We grow sometimes in one dimension, and not in another, unevenly. We grow partially. We are relative. We are mature in one realm, childish in another.
-> —Anais Nin
+> Take a gamble that love exists, and do a loving act.
+> — Sister Calderón (Red Dead Redemption 2)
 
-Fap aliqua qui, scenester pug Echo Park polaroid irony shabby chic ex cardigan church-key Odd Future accusamus. Blog stumptown sartorial squid, gastropub duis aesthetic Truffaut vero. Pinterest tilde twee, odio mumblecore jean shorts lumbersexual.
+Thanks a lot for reading!
