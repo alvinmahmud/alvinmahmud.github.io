@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: Home
 permalink: /
 subtitle:
 
@@ -17,16 +17,14 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items
+  enabled: false # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  limit: # leave blank to include all the news in the `_news` folder
 ---
 
-Hi! I’m Alvin, a software engineer based in Staten Island, NYC. I’m currently focused on building full stack web apps, sharpening my skills and exploring new technologies. 
+Hi! I’m Alvin, a software engineer based in Staten Island, NYC. I’m currently focused on building full stack apps, sharpening my programming skills and exploring new technologies. 
 
-Currently I’ve been picking up experience through hands-on projects, DS&A practice and staying curious.
-
-Outside of coding, I’m really into basketball, hitting the gym, and playing video games. I’m a big fan of hip-hop and R&B; Blxst is always in my rotation, along with artists like André 3000, Lil Tecca, and Frank Ocean.
+Outside of development, I’m really into basketball, hitting the gym, and playing video games. I’m a big fan of hip-hop and R&B; Blxst is always in my rotation, along with artists like André 3000, Lil Tecca, and Frank Ocean.
 
 I’m always open to connect or collaborate! Feel free to reach out via [email](mailto:alvin.mahmud@gmail.com) or check out some of my featured work here on the site. 
 
