@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-resume",
           title: "Resume",
-          description: "Here’s my resume with a breakdown of my background and work.",
+          description: "Hit the PDF button to download my resume!",
           section: "Navigation",
           handler: () => {
             window.location.href = "/resume/";
@@ -50,7 +50,10 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2.html";
-            },},{id: "projects-project-1",
+            },},{id: "news-just-wrapped-up-most-of-the-initial-setup-and-customization-of-my-portfolio-big-thanks-to-the-intuitive-al-folio-theme",
+          title: 'Just wrapped up most of the initial setup and customization of my portfolio....',
+          description: "",
+          section: "News",},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {
