@@ -5,7 +5,7 @@ permalink: /projects/
 description: Some of the things I’ve been building. Check out my projects and what went into them.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: ['*']
 horizontal: false
 ---
 
