@@ -4,7 +4,7 @@ layout: default
 {% unless site.data.resume %}
   <div class="post">
     <header class="post-header">
-      <h1 class="post-title">
+      <h1 class="post-title resume-heading">
         {{ page.title }}
         {% if page.cv_pdf %}
           <a
@@ -15,7 +15,8 @@ layout: default
             {% endif %}
             target="_blank"
             rel="noopener noreferrer"
-            class="float-right"
+            class="resume-download"
+            aria-label="Download resume PDF"
           >
             <i class="fa-solid fa-file-pdf"></i>
           </a>
@@ -55,7 +56,7 @@ layout: default
 {% else %}
   <div class="post">
     <header class="post-header">
-      <h1 class="post-title">
+      <h1 class="post-title resume-heading">
         {{ page.title }}
         {% if page.cv_pdf %}
           <a
@@ -66,7 +67,8 @@ layout: default
             {% endif %}
             target="_blank"
             rel="noopener noreferrer"
-            class="float-right"
+            class="resume-download"
+            aria-label="Download resume PDF"
           >
             <i class="fa-solid fa-file-pdf"></i>
           </a>

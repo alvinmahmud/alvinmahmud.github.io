@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Pokédex App
-external_link: https://alvinmahmud.github.io/pokedex-app
+external_link: https://alvinmahmud.github.io/ReactDex/
 img: /assets/img/pokedex.jpg
 description: A searchable Pokédex app built with React, Typescript, Tailwind, and Vite.
-category: '*'
+category: "*"
 importance: 1
 ---
