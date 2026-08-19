@@ -1,6 +1,16 @@
 <div class="col">
-  <a href="{% if project.external_link %}{{ project.external_link }}{% else %}{{ project.url | relative_url }}{% endif %}" {% if project.external_link %}target="_blank" rel="noopener noreferrer"{% endif %}>
-    <div class="card h-100 hoverable">
+  <a
+    href="{% if project.external_link %}{{ project.external_link }}{% else %}{{ project.url | relative_url }}{% endif %}"
+    {% if project.external_link %}
+      target="_blank" rel="noopener noreferrer"
+    {% endif %}
+  >
+    <div
+      class="card h-100 hoverable"
+      {% if project.github_repo %}
+        data-github-repo="{{ project.github_repo }}"
+      {% endif %}
+    >
       {% if project.img %}
         {%
           include figure.liquid
