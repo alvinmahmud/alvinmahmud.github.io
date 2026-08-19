@@ -22,7 +22,7 @@
   
 </title>
 <meta name="author" content="Alvin Mahmud">
-<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<meta name="description" content="Alvin Mahmud's software engineering portfolio, projects, and experience.
 ">
 
   <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
@@ -82,23 +82,22 @@
   </head>
 
   <!-- Body -->
-  <body class="fixed-top-nav ">
+  <body class="fixed-top-nav sticky-bottom-footer">
     <!-- Header -->
     <header>
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
     <div class="container">
-      
-        <a class="navbar-brand title font-weight-lighter" href="/">
+      <a class="navbar-brand title font-weight-lighter" href="/" aria-label="Alvin Mahmud — Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        
           
-            
-              <span class="font-weight-bold">Alvin</span>
-            
-            
-            Mahmud
+            <span class="font-weight-bold">Alvin</span>
           
-        </a>
-      
+          
+          Mahmud
+        
+      </a>
       <!-- Navbar Toggle -->
       <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="sr-only">Toggle navigation</span>
@@ -191,7 +190,7 @@
           
             <!-- Toogle theme mode -->
             <li class="toggle-container">
-              <button id="light-toggle" title="Change theme">
+              <button id="light-toggle" title="Change theme" aria-label="Change color theme">
                 <i class="ti ti-sun-moon" id="light-toggle-system"></i>
                 <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
                 <i class="ti ti-sun-filled" id="light-toggle-light"></i>
@@ -458,13 +457,15 @@
     
 
 
-  <footer class="fixed-bottom" role="contentinfo">
-    <div class="container mt-0">
+  <footer class="sticky-bottom mt-5" role="contentinfo">
+    
+
+    <div class="container">
       
-  © Copyright 2025
+  © Copyright 2026
   Alvin
   
-  Mahmud. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with the <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.
+  Mahmud. Built with <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> and hosted on <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>.
 
   
   

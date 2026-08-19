@@ -12,4 +12,4 @@ This repo hosts my personal portfolio website.
 
 ---
 
-> Built using [Jekyll](https://jekyllrb.com/) with the [al-folio](https://github.com/alshedivat/al-folio) theme. Hosted via GitHub Pages.
+> Built with [Jekyll](https://jekyllrb.com/) and hosted via GitHub Pages.
