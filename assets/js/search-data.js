@@ -61,8 +61,8 @@ ninja.data = [{
           description: "A searchable Pokédex app built with React, Typescript, Tailwind, and Vite.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project.html";
-            },},{id: "projects-media-backlog",
-          title: 'Media Backlog',
+            },},{id: "projects-loggy",
+          title: 'LoGGy',
           description: "(WIP) An intuitive app to manage your backlog of games, movies, shows, etc.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project.html";
