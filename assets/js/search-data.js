@@ -56,14 +56,14 @@ ninja.data = [{
           section: "News",},{id: "news-revisited-my-portfolio-after-a-long-time-working-on-some-overhauls",
           title: 'Revisited my portfolio after a long time! Working on some overhauls…',
           description: "",
-          section: "News",},{id: "projects-pokédex-app",
-          title: 'Pokédex App',
-          description: "A searchable Pokédex app built with React, Typescript, Tailwind, and Vite.",
+          section: "News",},{id: "projects-reactdex",
+          title: 'ReactDex',
+          description: "A sleek, React-driven Pokédex",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project.html";
             },},{id: "projects-loggy",
           title: 'LoGGy',
-          description: "(WIP) An intuitive app to manage your backlog of games, movies, shows, etc.",
+          description: "A way to manage your backlog of games, movies, and TV shows!",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project.html";
             },},{
