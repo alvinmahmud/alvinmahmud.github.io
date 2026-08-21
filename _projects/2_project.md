@@ -1,10 +1,13 @@
 ---
 layout: default
-title: LoGGy
-external_link: https://github.com/alvinmahmud/LoGGy
-github_repo: alvinmahmud/LoGGy
-img: /assets/img/backlog.jpg
-description: A way to manage your backlog of games, movies, and TV shows!
+title: ReactDex
+external_link: https://alvinmahmud.github.io/ReactDex/
+github_repo: alvinmahmud/ReactDex
+description: A sleek, React-driven Pokédex built on the PokéAPI.
+tech:
+  - TypeScript
+  - React
+  - REST API
 category: "*"
 importance: 2
 ---

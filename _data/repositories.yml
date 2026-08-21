@@ -4,10 +4,13 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
-  - alvinmahmud/pokedex-app
-  - alvinmahmud/media-backlog
   - alvinmahmud/alvinmahmud.github.io
-  - alvinmahmud/Nellies-Taqueria
-  - alvinmahmud/receipt-processor-challenge
-  - alvinmahmud/imdb-searcher
+  - alvinmahmud/ReactDex
+  - alvinmahmud/LoGGy
+  - alvinmahmud/neetcode-submissions
+  - alvinmahmud/Jobbo
+  - alvinmahmud/alvinmahmud
   - alvinmahmud/tiktok-trends
+  - alvinmahmud/imdb-searcher
+  - alvinmahmud/receipt-processor-challenge
+  - alvinmahmud/Nellies-Taqueria

@@ -1,16 +1,14 @@
-<ul class="card-text font-weight-light list-group list-group-flush">
+<div class="skill-groups">
   {% for content in entry.contents %}
-    <li class="list-group-item">
-      <h5 class="font-italic">{{ content.title }}</h5>
+    <section class="skill-group">
+      <h4>{{ content.title }}</h4>
       {% if content.items %}
-        <ul class="subitems">
-          {% for subitem in content.items %}
-            <li>
-              <span class="subitem">{{ subitem }}</span>
-            </li>
+        <ul>
+          {% for item in content.items %}
+            <li>{{ item }}</li>
           {% endfor %}
         </ul>
       {% endif %}
-    </li>
+    </section>
   {% endfor %}
-</ul>
+</div>

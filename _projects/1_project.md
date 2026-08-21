@@ -1,10 +1,12 @@
 ---
 layout: default
-title: ReactDex
-external_link: https://alvinmahmud.github.io/ReactDex/
-github_repo: alvinmahmud/ReactDex
-img: /assets/img/pokedex.jpg
-description: A sleek, React-driven Pokédex
+title: LoGGy
+external_link: https://github.com/alvinmahmud/LoGGy
+github_repo: alvinmahmud/LoGGy
+description: A way to manage your backlog of games, movies, and TV shows!
+tech:
+  - TypeScript
+  - React
 category: "*"
 importance: 1
 ---
