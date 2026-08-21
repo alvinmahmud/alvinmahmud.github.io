@@ -22,7 +22,7 @@
   
 </title>
 <meta name="author" content="Alvin Mahmud">
-<meta name="description" content="Some of the things I’ve been building. Check out my projects and what went into them.">
+<meta name="description" content="A few things I’ve built. Each one taught me something new about shipping software end to end.">
 
   <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
 
@@ -44,7 +44,7 @@
 <!-- Fonts & Icons -->
 <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
 <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772">
-<link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap">
+<link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Material+Icons&amp;display=swap">
 
 <!-- Code Syntax Highlighting -->
 <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
@@ -62,7 +62,7 @@
 <link rel="canonical" href="https://alvinmahmud.github.io/projects/">
 
 <!-- Dark Mode -->
-<script src="/assets/js/theme.js?05bbe42a120531af095ef447d22e7e31"></script>
+<script src="/assets/js/theme.js?b8faacc213a19887960266fc5ba474b1"></script>
 
   <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
   <script>
@@ -146,17 +146,6 @@
             
               
                 
-                <li class="nav-item ">
-                  <a class="nav-link" href="/news/">News
-                    
-                  </a>
-                </li>
-              
-            
-          
-            
-              
-                
                 <li class="nav-item active">
                   <a class="nav-link" href="/projects/">Projects
                     
@@ -191,10 +180,9 @@
           
           
           
-            <!-- Toogle theme mode -->
+            <!-- Toggle theme mode -->
             <li class="toggle-container">
               <button id="light-toggle" title="Change theme" aria-label="Change color theme">
-                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
                 <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
                 <i class="ti ti-sun-filled" id="light-toggle-light"></i>
               </button>
@@ -223,7 +211,7 @@
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">Projects</h1>
-    <p class="post-description">Some of the things I’ve been building. Check out my projects and what went into them.</p>
+    <p class="post-description">A few things I’ve built. Each one taught me something new about shipping software end to end.</p>
   </header>
 
   <article>
@@ -238,37 +226,26 @@
   <!-- Generate cards for each project -->
 
 
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+  <div class="row row-cols-1 row-cols-md-2">
     
       <div class="col">
-  <a href="https://alvinmahmud.github.io/ReactDex/" target="_blank" rel="noopener noreferrer">
-    <div class="card h-100 hoverable" data-github-repo="alvinmahmud/ReactDex">
-      
-        
-
-
-
-<figure>
-  <picture>
-    <!-- Auto scaling with imagemagick -->
-    <!--
-      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
-      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
-    -->
-    
-    <img src="/assets/img/pokedex.jpg" class="card-img-top" width="100%" height="auto" alt="project thumbnail" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-  </picture>
-
-  
-</figure>
-
-      
+  <a class="project-link" href="https://github.com/alvinmahmud/LoGGy" target="_blank" rel="noopener noreferrer" aria-label="Open LoGGy">
+    <div class="card h-100 hoverable" data-github-repo="alvinmahmud/LoGGy">
       <div class="card-body">
-        <h2 class="card-title">ReactDex</h2>
-        <p class="card-text">A sleek, React-driven Pokédex</p>
-        <div class="row ml-1 mr-1 p-0">
-          
+        <div class="project-card-heading">
+          <h2 class="card-title">LoGGy</h2>
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
         </div>
+        <p class="card-text">A way to manage your backlog of games, movies, and TV shows!</p>
+        
+          <ul class="project-tech" aria-label="Technologies">
+            
+              <li>TypeScript</li>
+            
+              <li>React</li>
+            
+          </ul>
+        
       </div>
     </div>
   </a>
@@ -276,34 +253,71 @@
 
     
       <div class="col">
-  <a href="https://github.com/alvinmahmud/LoGGy" target="_blank" rel="noopener noreferrer">
-    <div class="card h-100 hoverable" data-github-repo="alvinmahmud/LoGGy">
-      
-        
-
-
-
-<figure>
-  <picture>
-    <!-- Auto scaling with imagemagick -->
-    <!--
-      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
-      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
-    -->
-    
-    <img src="/assets/img/backlog.jpg" class="card-img-top" width="100%" height="auto" alt="project thumbnail" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-  </picture>
-
-  
-</figure>
-
-      
+  <a class="project-link" href="https://alvinmahmud.github.io/ReactDex/" target="_blank" rel="noopener noreferrer" aria-label="Open ReactDex">
+    <div class="card h-100 hoverable" data-github-repo="alvinmahmud/ReactDex">
       <div class="card-body">
-        <h2 class="card-title">LoGGy</h2>
-        <p class="card-text">A way to manage your backlog of games, movies, and TV shows!</p>
-        <div class="row ml-1 mr-1 p-0">
-          
+        <div class="project-card-heading">
+          <h2 class="card-title">ReactDex</h2>
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
         </div>
+        <p class="card-text">A sleek, React-driven Pokédex built on the PokéAPI.</p>
+        
+          <ul class="project-tech" aria-label="Technologies">
+            
+              <li>TypeScript</li>
+            
+              <li>React</li>
+            
+              <li>REST API</li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </a>
+</div>
+
+    
+      <div class="col">
+  <a class="project-link" href="https://github.com/alvinmahmud/Jobbo" target="_blank" rel="noopener noreferrer" aria-label="Open Jobbo">
+    <div class="card h-100 hoverable" data-github-repo="alvinmahmud/Jobbo">
+      <div class="card-body">
+        <div class="project-card-heading">
+          <h2 class="card-title">Jobbo</h2>
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </div>
+        <p class="card-text">A job-search companion that helps you find and track your next role.</p>
+        
+          <ul class="project-tech" aria-label="Technologies">
+            
+              <li>Full stack</li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </a>
+</div>
+
+    
+      <div class="col">
+  <a class="project-link" href="https://github.com/alvinmahmud/neetcode-submissions" target="_blank" rel="noopener noreferrer" aria-label="Open neetcode-submissions">
+    <div class="card h-100 hoverable" data-github-repo="alvinmahmud/neetcode-submissions">
+      <div class="card-body">
+        <div class="project-card-heading">
+          <h2 class="card-title">neetcode-submissions</h2>
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </div>
+        <p class="card-text">NeetCode.io problem submissions synced and published in real time.</p>
+        
+          <ul class="project-tech" aria-label="Technologies">
+            
+              <li>Python</li>
+            
+              <li>Automation</li>
+            
+          </ul>
+        
       </div>
     </div>
   </a>
@@ -395,6 +409,7 @@
 <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script>
 <script defer src="/assets/js/page-transitions.js?a86867692f5c643c19582aa8fa3123a6"></script>
 <script defer src="/assets/js/project-metadata.js?e73ac0f1134d5d8266ddbba1a4f32bc5"></script>
+<script defer src="/assets/js/github-repositories.js?bb8608e6856335fe66623653fa111214"></script>
 <script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script>
 
 <!-- Jupyter Open External Links New Tab -->

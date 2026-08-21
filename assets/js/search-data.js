@@ -9,30 +9,23 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-news",
-          title: "News",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/news/";
-          },
-        },{id: "nav-projects",
+  },{id: "nav-projects",
           title: "Projects",
-          description: "Some of the things I’ve been building. Check out my projects and what went into them.",
+          description: "A few things I’ve built. Each one taught me something new about shipping software end to end.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-repos",
           title: "Repos",
-          description: "A mix of side projects, WIPs, and finished apps. Take a look under the hood!",
+          description: "Public repositories from @alvinmahmud, most recently updated first.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/repositories/";
           },
         },{id: "nav-resume",
           title: "Resume",
-          description: "Hit the PDF button to download my resume!",
+          description: "New York, NY · alvin.mahmud@gmail.com · (917) 572-0010",
           section: "Navigation",
           handler: () => {
             window.location.href = "/resume/";
@@ -42,30 +35,26 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather.html";
-            },},{id: "news-personal-site-has-been-created",
-          title: 'Personal site has been created!',
-          description: "",
-          section: "News",},{id: "news-my-first-announcement",
-          title: 'My First Announcement',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2.html";
-            },},{id: "news-just-wrapped-up-most-of-the-initial-setup-and-customization-of-my-portfolio-big-thanks-to-the-intuitive-al-folio-theme",
-          title: 'Just wrapped up most of the initial setup and customization of my portfolio....',
-          description: "",
-          section: "News",},{id: "news-revisited-my-portfolio-after-a-long-time-working-on-some-overhauls",
-          title: 'Revisited my portfolio after a long time! Working on some overhauls…',
-          description: "",
-          section: "News",},{id: "projects-reactdex",
-          title: 'ReactDex',
-          description: "A sleek, React-driven Pokédex",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project.html";
             },},{id: "projects-loggy",
           title: 'LoGGy',
           description: "A way to manage your backlog of games, movies, and TV shows!",
           section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project.html";
+            },},{id: "projects-reactdex",
+          title: 'ReactDex',
+          description: "A sleek, React-driven Pokédex built on the PokéAPI.",
+          section: "Projects",handler: () => {
               window.location.href = "/projects/2_project.html";
+            },},{id: "projects-jobbo",
+          title: 'Jobbo',
+          description: "A job-search companion that helps you find and track your next role.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project.html";
+            },},{id: "projects-neetcode-submissions",
+          title: 'neetcode-submissions',
+          description: "NeetCode.io problem submissions synced and published in real time.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_project.html";
             },},{
         id: 'social-email',
         title: 'email',
