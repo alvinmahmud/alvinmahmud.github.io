@@ -1,15 +1,21 @@
 # Alvin Mahmud's Portfolio
 
-This repo hosts my personal portfolio website.
+My single-page portfolio, built with React, TypeScript, and Vite and deployed to GitHub Pages.
 
-**Visit here**: [alvinmahmud.github.io](https://alvinmahmud.github.io/)
+Visit [alvinmahmud.github.io](https://alvinmahmud.github.io/).
 
-## What’s on the site
+## Development
 
-- About Me
-- Projects
-- Contact Info
+```bash
+npm install
+npm run dev
+```
 
----
+## Checks
 
-> Built with [Jekyll](https://jekyllrb.com/) and hosted via GitHub Pages.
+```bash
+npm run format:check
+npm run build
+```
+
+Pushing to `main` builds the app and deploys the generated `dist/` directory through GitHub Actions.
