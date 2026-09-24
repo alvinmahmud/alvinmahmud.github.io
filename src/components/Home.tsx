@@ -1,90 +1,113 @@
 import { Mail } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { metrics, profile, stack } from "../data";
+import { GitHubIcon, LinkedInIcon } from "./BrandIcons";
 
 export function Home() {
   return (
     <section
-      className="panel home-panel"
+      className="home-layout"
       id="panel-home"
       role="tabpanel"
       aria-labelledby="tab-home"
     >
-      <header className="page-header home-header">
-        <h1>Alvin Mahmud</h1>
-      </header>
+      <div className="home-primary">
+        <div className="hero-heading">
+          <h1>
+            Alvin
+            <span>Mahmud</span>
+          </h1>
+        </div>
 
-      <div className="home-grid">
-        <div className="home-copy">
-          <p>
-            Hi! I’m Alvin, a software engineer based in Staten Island, NYC. I’m
-            currently focused on building full stack apps, sharpening my
-            programming skills and exploring new technologies.
-          </p>
-          <p>
-            Outside of development, I’m really into basketball, hitting the gym,
-            and playing video games. I’m a big fan of hip-hop and R&amp;B; Blxst
-            is always in my rotation, along with artists like André 3000, Lil
-            Tecca, and Frank Ocean.
-          </p>
-          <p>
-            I’m always open to connect or collaborate! Feel free to reach out
-            via <a href="mailto:alvin.mahmud@gmail.com">email</a> or check out
-            some of my featured work here on the site.
-          </p>
-          <p>
-            You can also find me on{" "}
+        <div className="hero-bottom">
+          <p className="tagline">{profile.tagline}</p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#work">
+              View Projects
+            </a>
             <a
-              href="https://github.com/alvinmahmud"
+              className="button"
+              href={profile.resumeUrl}
               target="_blank"
               rel="noreferrer"
             >
-              GitHub
-            </a>{" "}
-            or{" "}
-            <a
-              href="https://www.linkedin.com/in/alvin-mahmud/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>{" "}
-            where I share my code and progress to my network. Thanks for
-            stopping by!
-          </p>
+              My Resume
+            </a>
+          </div>
+          <div className="code-block" aria-label="Profile details">
+            <p>
+              <span>01</span>
+              <code>
+                <b>const</b> name = <i>&quot;{profile.name}&quot;</i>;
+              </code>
+            </p>
+            <p>
+              <span>02</span>
+              <code>
+                <b>const</b> role = <i>&quot;{profile.role}&quot;</i>;
+              </code>
+            </p>
+            <p>
+              <span>03</span>
+              <code>
+                location: <i>&quot;{profile.location}&quot;</i>;
+              </code>
+            </p>
+          </div>
         </div>
-
-        <figure className="profile-card">
-          <img src="/assets/prof_pic.jpg" alt="Alvin Mahmud at a waterfall" />
-          <figcaption>Based in New York, NY</figcaption>
-        </figure>
       </div>
 
-      <div className="contact-strip">
-        <div className="contact-links" aria-label="Contact links">
-          <a href="mailto:alvin.mahmud@gmail.com" aria-label="Email">
-            <Mail size={20} />
-          </a>
-          <a
-            href="https://github.com/alvinmahmud"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-          >
-            <FaGithub size={20} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/alvin-mahmud/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin size={20} />
-          </a>
+      <aside className="home-sidebar">
+        <section className="stack-section">
+          <h2 className="section-heading">Core Stack</h2>
+          <div className="stack-list">
+            {stack.map((group) => (
+              <div className="stack-group" key={group.title}>
+                <h3>{group.title}</h3>
+                <p>{group.items.join(", ")}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="sidebar-bottom">
+          <section>
+            <h2 className="section-heading">Activity Metrics</h2>
+            <div className="metrics-grid">
+              {metrics.map((metric) => (
+                <div className="metric" key={metric.label}>
+                  <strong>{metric.value}</strong>
+                  <span>{metric.label}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <footer className="connection-row">
+            <div className="social-links" aria-label="Contact links">
+              <a href={`mailto:${profile.email}`} aria-label="Email Alvin">
+                <Mail size={17} />
+              </a>
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                <GitHubIcon />
+              </a>
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
+                <LinkedInIcon />
+              </a>
+            </div>
+            <span>SECURED_CONNECTION_TLS_1.3</span>
+          </footer>
         </div>
-        <p>
-          The best way to reach me is by email, but use what works best for you!
-        </p>
-      </div>
+      </aside>
     </section>
   );
 }

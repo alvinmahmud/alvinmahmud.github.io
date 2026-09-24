@@ -1,75 +1,94 @@
 import { Download } from "lucide-react";
-import { education, experience, skillGroups } from "../data";
-import type { ResumeEntry } from "../types";
-
-function ResumeList({ entries }: { entries: ResumeEntry[] }) {
-  return (
-    <ul className="resume-list">
-      {entries.map((entry) => (
-        <li className="resume-item" key={`${entry.role}-${entry.period}`}>
-          <div>
-            <h3>
-              {entry.role} <span>· {entry.organization}</span>
-            </h3>
-          </div>
-          <p>
-            <span>{entry.period}</span>
-            <span>· {entry.location}</span>
-          </p>
-        </li>
-      ))}
-    </ul>
-  );
-}
+import { education, experience, profile, skillGroups } from "../data";
 
 export function Resume() {
   return (
     <section
-      className="panel"
+      className="resume-page"
       id="panel-resume"
       role="tabpanel"
       aria-labelledby="tab-resume"
     >
-      <header className="page-header resume-header">
+      <header className="resume-document-heading">
         <div>
           <h1>Resume</h1>
-          <p>New York, NY · alvin.mahmud@gmail.com · (917) 572-0010</p>
+          <p className="contact-line">
+            {profile.location} · {profile.email} · {profile.phone}
+          </p>
         </div>
         <a
-          className="download-button"
-          href="/assets/alvin_mahmud_resume.pdf"
+          className="button resume-download"
+          href={profile.resumeUrl}
           target="_blank"
           rel="noreferrer"
         >
-          <Download size={15} /> Download PDF
+          <Download size={14} /> My Resume
         </a>
       </header>
 
-      <div className="resume-sections">
-        <section>
-          <h2>Experience</h2>
-          <ResumeList entries={experience} />
-        </section>
-        <section>
-          <h2>Education</h2>
-          <ResumeList entries={education} />
-        </section>
-        <section>
-          <h2>Skills</h2>
-          <div className="skill-groups">
-            {skillGroups.map((group) => (
-              <div className="skill-group" key={group.title}>
-                <h3>{group.title}</h3>
-                <ul className="tags">
-                  {group.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+      <section className="resume-section" aria-labelledby="experience-heading">
+        <h2 className="content-label" id="experience-heading">
+          Experience
+        </h2>
+        <div className="resume-list">
+          {experience.map((entry) => (
+            <article
+              className="resume-entry"
+              key={`${entry.role}-${entry.period}`}
+            >
+              <h3>
+                {entry.role} <span>· {entry.organization}</span>
+              </h3>
+              <p>
+                {entry.period} · {entry.location}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="resume-section" aria-labelledby="education-heading">
+        <h2 className="content-label" id="education-heading">
+          Education
+        </h2>
+        <div className="resume-list">
+          {education.map((entry) => (
+            <article
+              className="resume-entry education-entry"
+              key={`${entry.role}-${entry.period}`}
+            >
+              <div>
+                <h3>{entry.organization}</h3>
+                <p>{entry.role}</p>
               </div>
-            ))}
-          </div>
-        </section>
-      </div>
+              <p>
+                {entry.period} · {entry.location}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="resume-section skills-section"
+        aria-labelledby="skills-heading"
+      >
+        <h2 className="content-label" id="skills-heading">
+          Skills
+        </h2>
+        <div className="skill-groups">
+          {skillGroups.map((group) => (
+            <div className="skill-group" key={group.title}>
+              <h3>{group.title}</h3>
+              <ul>
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
     </section>
   );
 }

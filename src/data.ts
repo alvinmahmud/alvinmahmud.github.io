@@ -1,52 +1,42 @@
-import type { Project, ResumeEntry, SkillGroup } from "./types";
+export const profile = {
+  name: "Alvin Mahmud",
+  role: "Software Engineer",
+  location: "New York, NY",
+  email: "alvin.mahmud@gmail.com",
+  phone: "(917) 572-0010",
+  github: "https://github.com/alvinmahmud",
+  linkedin: "https://www.linkedin.com/in/alvin-mahmud/",
+  resumeUrl: "/assets/alvin_mahmud_resume.pdf",
+  status: "Available to connect",
+  tagline: "Full stack engineer building products from frontend to backend.",
+} as const;
 
-export const projects: Project[] = [
+export const stack = [
+  { title: "Frontend", items: ["React", "TypeScript", "HTML", "CSS"] },
   {
-    name: "LoGGy",
-    repository: "alvinmahmud/LoGGy",
-    href: "https://github.com/alvinmahmud/LoGGy",
-    description: "A way to manage your backlog of games, movies, and TV shows!",
-    technologies: ["TypeScript", "React"],
+    title: "Backend",
+    items: ["Node.js", "Express", "Java", "Python", "Spring Boot"],
   },
   {
-    name: "ReactDex",
-    repository: "alvinmahmud/ReactDex",
-    href: "https://alvinmahmud.github.io/ReactDex/",
-    description: "A sleek, React-driven Pokédex built on the PokéAPI.",
-    technologies: ["TypeScript", "React", "REST API"],
+    title: "Cloud & DevOps",
+    items: ["GCP", "Docker", "Kubernetes"],
   },
-  {
-    name: "Jobbo",
-    repository: "alvinmahmud/Jobbo",
-    href: "https://github.com/alvinmahmud/Jobbo",
-    description:
-      "A job-search companion that helps you find and track your next role.",
-    technologies: ["Full stack"],
-  },
-  {
-    name: "neetcode-submissions",
-    repository: "alvinmahmud/neetcode-submissions",
-    href: "https://github.com/alvinmahmud/neetcode-submissions",
-    description:
-      "NeetCode.io problem submissions synced and published in real time.",
-    technologies: ["Python", "Automation"],
-  },
-];
+] as const;
 
-export const featuredRepositories = [
-  "alvinmahmud/alvinmahmud.github.io",
-  "alvinmahmud/ReactDex",
-  "alvinmahmud/LoGGy",
-  "alvinmahmud/neetcode-submissions",
-  "alvinmahmud/Jobbo",
-  "alvinmahmud/alvinmahmud",
-  "alvinmahmud/tiktok-trends",
-  "alvinmahmud/imdb-searcher",
-  "alvinmahmud/receipt-processor-challenge",
-  "alvinmahmud/Nellies-Taqueria",
-];
+export const metrics = [
+  { label: "Years Experience", value: "4+" },
+  { label: "Public Repos", value: "20+" },
+] as const;
 
-export const experience: ResumeEntry[] = [
+// Identifiers only: displayed names and languages always come from GitHub.
+export const featuredRepos = [
+  "LoGGy",
+  "ReactDex",
+  "Jobbo",
+  "neetcode-submissions",
+] as const;
+
+export const experience = [
   {
     role: "Software Engineer II",
     organization: "VCS Software",
@@ -65,18 +55,18 @@ export const experience: ResumeEntry[] = [
     period: "Jan 2021 — May 2021",
     location: "Stony Brook, NY",
   },
-];
+] as const;
 
-export const education: ResumeEntry[] = [
+export const education = [
   {
-    role: "Stony Brook University",
-    organization: "B.S. in Computer Information Systems",
+    role: "B.S. in Computer Information Systems",
+    organization: "Stony Brook University",
     period: "2017 — 2021",
     location: "Stony Brook, NY",
   },
-];
+] as const;
 
-export const skillGroups: SkillGroup[] = [
+export const skillGroups = [
   {
     title: "Languages",
     items: ["JavaScript", "TypeScript", "Java", "Python", "SQL", "HTML/CSS"],
@@ -109,4 +99,4 @@ export const skillGroups: SkillGroup[] = [
       "Codex",
     ],
   },
-];
+] as const;

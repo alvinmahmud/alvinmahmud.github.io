@@ -1,21 +1,31 @@
 import { useEffect, useState } from "react";
+import { EditorFrame } from "./components/EditorFrame";
 import { Header } from "./components/Header";
 import { Home } from "./components/Home";
 import { Projects } from "./components/Projects";
-import { Repositories } from "./components/Repositories";
 import { Resume } from "./components/Resume";
 import { useGitHubRepositories } from "./hooks/useGitHubRepositories";
 import type { TabId, Theme } from "./types";
 
-const tabIds: TabId[] = ["home", "projects", "repos", "resume"];
-
-const getTabFromHash = (): TabId => {
-  const hash = window.location.hash.slice(1) as TabId;
-  return tabIds.includes(hash) ? hash : "home";
+const tabDetails: Record<
+  TabId,
+  { filename: string; meta?: string; bodyClassName?: string }
+> = {
+  home: { filename: "index.tsx", bodyClassName: "home-editor-body" },
+  work: { filename: "work.tsx" },
+  resume: { filename: "resume.md", meta: "UTF-8  READ ONLY" },
 };
 
-const getInitialTheme = (): Theme =>
-  localStorage.getItem("theme") === "light" ? "light" : "dark";
+function getTabFromHash(): TabId {
+  const hash = window.location.hash.slice(1).toLowerCase();
+  if (hash === "work" || hash === "resume") return hash;
+  if (hash === "projects" || hash === "repos") return "work";
+  return "home";
+}
+
+function getInitialTheme(): Theme {
+  return localStorage.getItem("theme") === "light" ? "light" : "dark";
+}
 
 function App() {
   const [activeTab, setActiveTab] = useState<TabId>(getTabFromHash);
@@ -23,13 +33,9 @@ function App() {
   const repositories = useGitHubRepositories();
 
   useEffect(() => {
-    const handleHistoryChange = () => setActiveTab(getTabFromHash());
-    window.addEventListener("hashchange", handleHistoryChange);
-    window.addEventListener("popstate", handleHistoryChange);
-    return () => {
-      window.removeEventListener("hashchange", handleHistoryChange);
-      window.removeEventListener("popstate", handleHistoryChange);
-    };
+    const handleHashChange = () => setActiveTab(getTabFromHash());
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
   useEffect(() => {
@@ -37,21 +43,27 @@ function App() {
     localStorage.setItem("theme", theme);
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", theme === "dark" ? "#080d12" : "#f8f9fb");
+      ?.setAttribute("content", theme === "dark" ? "#08090c" : "#f5f7f8");
   }, [theme]);
 
   const changeTab = (tab: TabId) => {
     setActiveTab(tab);
-    const nextUrl =
-      tab === "home"
-        ? `${window.location.pathname}${window.location.search}`
-        : `#${tab}`;
-    window.history.pushState({ tab }, "", nextUrl);
-    window.scrollTo({ top: 0, behavior: "auto" });
+    const hash = tab === "home" ? "" : `#${tab}`;
+    window.history.replaceState(null, "", `${window.location.pathname}${hash}`);
   };
 
+  const details =
+    activeTab === "work"
+      ? {
+          ...tabDetails.work,
+          meta: repositories.isPending
+            ? "UTF-8  FETCHING…"
+            : `UTF-8  ${repositories.data?.length ?? 0} REPOS`,
+        }
+      : tabDetails[activeTab];
+
   return (
-    <>
+    <div className="app-shell">
       <Header
         activeTab={activeTab}
         onTabChange={changeTab}
@@ -60,17 +72,19 @@ function App() {
           setTheme((current) => (current === "dark" ? "light" : "dark"))
         }
       />
+
       <main className="site-main">
-        <div key={activeTab} className="panel-transition">
-          {activeTab === "home" && <Home />}
-          {activeTab === "projects" && <Projects repositories={repositories} />}
-          {activeTab === "repos" && (
-            <Repositories repositories={repositories} />
-          )}
-          {activeTab === "resume" && <Resume />}
+        <div className="frame-wrap">
+          <EditorFrame {...details}>
+            <div className="tab-enter" key={activeTab}>
+              {activeTab === "home" && <Home />}
+              {activeTab === "work" && <Projects query={repositories} />}
+              {activeTab === "resume" && <Resume />}
+            </div>
+          </EditorFrame>
         </div>
       </main>
-    </>
+    </div>
   );
 }
 

@@ -1,11 +1,10 @@
-import { Menu, Moon, Sun, X } from "lucide-react";
-import { useState, type KeyboardEvent } from "react";
+import { Moon, Sun } from "lucide-react";
+import type { KeyboardEvent } from "react";
 import type { TabId, Theme } from "../types";
 
 const tabs: Array<{ id: TabId; label: string }> = [
   { id: "home", label: "Home" },
-  { id: "projects", label: "Projects" },
-  { id: "repos", label: "Repos" },
+  { id: "work", label: "Projects" },
   { id: "resume", label: "Resume" },
 ];
 
@@ -22,32 +21,23 @@ export function Header({
   theme,
   onThemeChange,
 }: HeaderProps) {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const selectTab = (tab: TabId) => {
-    onTabChange(tab);
-    setMenuOpen(false);
-  };
-
-  const handleTabKeyDown = (
+  const handleKeyDown = (
     event: KeyboardEvent<HTMLButtonElement>,
     index: number,
   ) => {
-    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) {
-      return;
-    }
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
 
     event.preventDefault();
     let nextIndex = index;
-    if (event.key === "ArrowLeft") {
+    if (event.key === "ArrowLeft")
       nextIndex = (index - 1 + tabs.length) % tabs.length;
-    }
     if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
     if (event.key === "Home") nextIndex = 0;
     if (event.key === "End") nextIndex = tabs.length - 1;
 
-    selectTab(tabs[nextIndex].id);
-    document.getElementById(`tab-${tabs[nextIndex].id}`)?.focus();
+    const nextTab = tabs[nextIndex];
+    onTabChange(nextTab.id);
+    document.getElementById(`tab-${nextTab.id}`)?.focus();
   };
 
   return (
@@ -56,41 +46,31 @@ export function Header({
         <button
           className="brand"
           type="button"
-          onClick={() => selectTab("home")}
-          aria-label="Alvin Mahmud — Home"
+          onClick={() => onTabChange("home")}
+          aria-label="Alvin Mahmud, home"
         >
-          <span className="brand-mark" aria-hidden="true" />
-          <strong>Alvin</strong> Mahmud
+          <span aria-hidden="true" />
+          <strong>Alvin Mahmud</strong>
         </button>
 
-        <button
-          className="menu-toggle"
-          type="button"
-          onClick={() => setMenuOpen((current) => !current)}
-          aria-controls="site-navigation"
-          aria-expanded={menuOpen}
-          aria-label="Toggle navigation"
-        >
-          {menuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-
-        <div
-          className={`navigation-menu${menuOpen ? " is-open" : ""}`}
-          id="site-navigation"
-        >
-          <div className="tabs" role="tablist" aria-label="Sections">
+        <div className="nav-actions">
+          <div
+            className="tabs no-scrollbar"
+            role="tablist"
+            aria-label="Sections"
+          >
             {tabs.map((tab, index) => (
               <button
-                className={`tab${activeTab === tab.id ? " is-active" : ""}`}
+                className={`tab ${activeTab === tab.id ? "is-active" : ""}`}
                 id={`tab-${tab.id}`}
                 key={tab.id}
                 type="button"
                 role="tab"
-                aria-controls={`panel-${tab.id}`}
                 aria-selected={activeTab === tab.id}
+                aria-controls={`panel-${tab.id}`}
                 tabIndex={activeTab === tab.id ? 0 : -1}
-                onClick={() => selectTab(tab.id)}
-                onKeyDown={(event) => handleTabKeyDown(event, index)}
+                onClick={() => onTabChange(tab.id)}
+                onKeyDown={(event) => handleKeyDown(event, index)}
               >
                 {tab.label}
               </button>
@@ -101,12 +81,10 @@ export function Header({
             className="theme-toggle"
             type="button"
             onClick={onThemeChange}
-            aria-label={`Switch to ${
-              theme === "dark" ? "light" : "dark"
-            } theme`}
-            title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
           >
-            {theme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
+            {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
           </button>
         </div>
       </nav>

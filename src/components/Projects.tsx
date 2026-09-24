@@ -1,60 +1,158 @@
-import { ArrowUpRight } from "lucide-react";
-import { projects } from "../data";
+import { ArrowUpRight, GitFork, RefreshCw, Star } from "lucide-react";
+import { featuredRepos, profile } from "../data";
+import { useGitHubRepositories } from "../hooks/useGitHubRepositories";
 import type { Repository } from "../types";
 
+type RepositoryQuery = ReturnType<typeof useGitHubRepositories>;
+
 interface ProjectsProps {
-  repositories: Repository[];
+  query: RepositoryQuery;
 }
 
-export function Projects({ repositories }: ProjectsProps) {
-  const metadata = new Map(
-    repositories.map((repository) => [
-      repository.full_name.toLowerCase(),
-      repository,
-    ]),
+const formatDate = (date: string) =>
+  new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(new Date(date));
+
+function LanguageBadge({ language }: { language: string | null }) {
+  if (!language) return null;
+  return <span className="language-badge">{language}</span>;
+}
+
+export function Projects({ query }: ProjectsProps) {
+  const repositories = query.data ?? [];
+  const featuredNames = new Set(
+    featuredRepos.map((name) => name.toLocaleLowerCase()),
+  );
+  const featured = featuredRepos
+    .map((name) =>
+      repositories.find(
+        (repository) =>
+          repository.name.toLocaleLowerCase() === name.toLocaleLowerCase(),
+      ),
+    )
+    .filter((repository): repository is Repository => Boolean(repository));
+  const remaining = repositories.filter(
+    (repository) => !featuredNames.has(repository.name.toLocaleLowerCase()),
   );
 
   return (
     <section
-      className="panel"
-      id="panel-projects"
+      className="projects-page"
+      id="panel-work"
       role="tabpanel"
-      aria-labelledby="tab-projects"
+      aria-labelledby="tab-work"
     >
-      <header className="page-header">
-        <h1>Projects</h1>
+      <header className="document-heading">
+        <h1>Work</h1>
         <p>
-          A few things I’ve built. Each one taught me something new about
-          shipping software end to end.
+          git remote — <a href={profile.github}>@alvinmahmud</a> · projects and
+          repositories, sorted by last push
         </p>
       </header>
 
-      <div className="project-grid">
-        {projects.map((project) => {
-          const repository = metadata.get(project.repository.toLowerCase());
-          return (
-            <a
-              className="project-card"
-              href={project.href}
-              target="_blank"
-              rel="noreferrer"
-              key={project.repository}
-              aria-label={`Open ${repository?.name ?? project.name}`}
+      {query.isPending && (
+        <div className="featured-grid" aria-label="Loading repositories">
+          {featuredRepos.map((name) => (
+            <div
+              className="featured-card skeleton"
+              key={name}
+              aria-hidden="true"
             >
-              <div className="card-heading">
-                <h2>{repository?.name ?? project.name}</h2>
-                <ArrowUpRight size={16} aria-hidden="true" />
-              </div>
-              <p>{repository?.description || project.description}</p>
-              <ul className="tags" aria-label="Technologies">
-                {project.technologies.map((technology) => (
-                  <li key={technology}>{technology}</li>
-                ))}
-              </ul>
-            </a>
-          );
-        })}
-      </div>
+              <span />
+              <span />
+              <span />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {query.isError && (
+        <div className="query-error" role="alert">
+          <div>
+            <strong>GitHub connection interrupted.</strong>
+            <span>Repository metadata could not be loaded.</span>
+          </div>
+          <button className="button" onClick={() => void query.refetch()}>
+            <RefreshCw size={14} /> Retry
+          </button>
+        </div>
+      )}
+
+      {query.isSuccess && (
+        <>
+          <section aria-labelledby="featured-heading">
+            <h2 className="content-label" id="featured-heading">
+              Featured
+            </h2>
+            <div className="featured-grid">
+              {featured.map((repository, index) => (
+                <article className="featured-card" key={repository.id}>
+                  <div className="featured-title">
+                    <h3>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      {repository.name}
+                    </h3>
+                    <a
+                      href={repository.html_url}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Open ${repository.name}`}
+                    >
+                      <ArrowUpRight size={17} />
+                    </a>
+                  </div>
+                  <p>{repository.description ?? "No description provided."}</p>
+                  <div className="card-footer">
+                    <LanguageBadge language={repository.language} />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section
+            className="all-repositories"
+            aria-labelledby="all-repos-heading"
+          >
+            <h2 className="content-label" id="all-repos-heading">
+              All Repositories
+            </h2>
+            <div className="repository-grid">
+              {remaining.map((repository) => (
+                <a
+                  className="repository-card"
+                  href={repository.html_url}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={repository.id}
+                >
+                  <div className="repository-title">
+                    <h3>{repository.name}</h3>
+                    <div aria-label="Repository statistics">
+                      <span>
+                        <Star size={13} /> {repository.stargazers_count}
+                      </span>
+                      <span>
+                        <GitFork size={13} /> {repository.forks_count}
+                      </span>
+                    </div>
+                  </div>
+                  <p>{repository.description ?? "No description provided."}</p>
+                  <div className="repository-footer">
+                    <span>{repository.language ?? ""}</span>
+                    <time dateTime={repository.updated_at}>
+                      Updated {formatDate(repository.updated_at)}
+                    </time>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
     </section>
   );
 }
