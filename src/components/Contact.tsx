@@ -1,12 +1,22 @@
 import { Send } from "lucide-react";
-import { useState, type SubmitEvent } from "react";
+import { useRef, useState, type SubmitEvent } from "react";
 import { contactFormEndpoint, profile } from "../data";
 import { SocialLinks } from "./SocialLinks";
 
-type SubmissionStatus = "idle" | "sending" | "success" | "error";
+const SUBMISSION_COOLDOWN_MS = 60_000;
+const LAST_ATTEMPT_KEY = "contact-last-attempt";
+
+type SubmissionStatus =
+  | "idle"
+  | "sending"
+  | "success"
+  | "error"
+  | "cooldown"
+  | "rate-limited";
 
 export function Contact() {
   const [status, setStatus] = useState<SubmissionStatus>("idle");
+  const lastAttempt = useRef(0);
   const isConfigured = contactFormEndpoint.trim().length > 0;
   const isSending = status === "sending";
 
@@ -16,6 +26,31 @@ export function Contact() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+    const now = Date.now();
+
+    // Storage shares the cooldown across tabs and reloads; the ref also works
+    // when browser privacy settings prevent storage access.
+    try {
+      const storedAttempt = Number(localStorage.getItem(LAST_ATTEMPT_KEY));
+      if (Number.isFinite(storedAttempt) && storedAttempt <= now) {
+        lastAttempt.current = Math.max(lastAttempt.current, storedAttempt);
+      }
+    } catch {
+      // Keep the in-memory cooldown when storage is unavailable.
+    }
+
+    if (now - lastAttempt.current < SUBMISSION_COOLDOWN_MS) {
+      setStatus("cooldown");
+      return;
+    }
+
+    lastAttempt.current = now;
+    try {
+      localStorage.setItem(LAST_ATTEMPT_KEY, String(now));
+    } catch {
+      // Submission does not require browser storage.
+    }
+
     setStatus("sending");
 
     try {
@@ -26,6 +61,10 @@ export function Contact() {
         signal: AbortSignal.timeout(30_000),
       });
 
+      if (response.status === 429) {
+        setStatus("rate-limited");
+        return;
+      }
       if (!response.ok)
         throw new Error(`Formspree returned ${response.status}`);
 
@@ -46,15 +85,20 @@ export function Contact() {
       <div className="contact-content">
         <header className="document-heading">
           <h1>Contact Me</h1>
-          <p>Have a question or a project in mind? Send me a message.</p>
+          <p>Have a question or a project in mind? Send me a message!</p>
         </header>
 
         <form
           className="contact-form"
           onSubmit={handleSubmit}
-          aria-describedby={isConfigured ? "contact-form-note" : undefined}
           aria-busy={isSending}
         >
+          <div hidden>
+            <label>
+              Leave this field empty
+              <input name="_gotcha" tabIndex={-1} autoComplete="off" />
+            </label>
+          </div>
           <fieldset disabled={isSending}>
             <div className="contact-field">
               <label htmlFor="contact-name">Full Name</label>
@@ -101,11 +145,6 @@ export function Contact() {
             </div>
           </fieldset>
 
-          {isConfigured && (
-            <p className="contact-note" id="contact-form-note">
-              Your details will be sent through Formspree to my inbox.
-            </p>
-          )}
           <button
             className="button button-primary contact-submit"
             type="submit"
@@ -116,10 +155,14 @@ export function Contact() {
           </button>
           <div className="contact-status" role="status" aria-atomic="true">
             {status === "success" &&
-              "Thanks! Your message was submitted successfully."}
+              "Your message was submitted! Look to hear back soon."}
+            {status === "cooldown" &&
+              "Please wait a bit between submissions!"}
+            {status === "rate-limited" &&
+              "Too many submissions right now. Please try again later or use the email link below."}
             {status === "error" && (
               <>
-                Your message could not be confirmed. Please try again or email{" "}
+                Your message was not sent. Please try again or email me at{" "}
                 <a href={`mailto:${profile.email}`}>{profile.email}</a>{" "}
                 directly.
               </>

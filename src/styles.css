@@ -1690,6 +1690,7 @@ a:focus-visible {
 
 .contact-submit {
   width: 100%;
+  margin-top: 1rem;
 }
 
 .contact-submit:disabled {

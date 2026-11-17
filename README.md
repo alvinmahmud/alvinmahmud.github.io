@@ -21,6 +21,12 @@ The Contact tab uses Formspree to forward messages to your inbox. Sending stays 
 
 The endpoint is public, not a secret. Never add email credentials or private API keys. Submitted names, email addresses, optional phone numbers, and messages are processed by Formspree. Free-tier limits and spam protections are managed in your Formspree account.
 
+### Basic spam protection
+
+The form includes Formspree's `_gotcha` honeypot and a one-minute browser-side cooldown between submission attempts. The cooldown is stored locally to cover reloads and other tabs (with an in-memory fallback if storage is blocked). Rate-limit responses from Formspree show a dedicated message.
+
+The cooldown only discourages repeated use of the UI; it is not a security boundary and cannot block direct requests to the public endpoint. Review and enable the spam/CAPTCHA protections available in your Formspree account for server-side enforcement. No private credentials or custom backend are needed for the frontend protections.
+
 ## Checks
 
 ```bash

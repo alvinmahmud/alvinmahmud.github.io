@@ -12,7 +12,7 @@ export const profile = {
 } as const;
 
 // Public Formspree endpoint; leave empty until the receiving form is configured.
-export const contactFormEndpoint: string = "";
+export const contactFormEndpoint: string = "https://formspree.io/f/xeaggqba";
 
 export const stack = [
   { title: "Frontend", items: ["React", "TypeScript", "HTML", "CSS"] },
