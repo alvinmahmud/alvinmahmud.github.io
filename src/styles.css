@@ -14,8 +14,8 @@
   --surface-raised: oklch(0.2 0.018 260);
   --secondary: oklch(0.19 0.025 250);
   --text: oklch(0.94 0.009 255);
-  --muted: oklch(0.64 0.02 255);
-  --faint: oklch(0.46 0.018 255);
+  --muted: oklch(0.72 0.02 255);
+  --faint: oklch(0.64 0.018 255);
   --border: oklch(0.29 0.02 255);
   --accent: oklch(0.75 0.12 195);
   --accent-strong: oklch(0.82 0.13 190);
@@ -34,8 +34,8 @@
   --surface-raised: oklch(0.97 0.008 245);
   --secondary: oklch(0.94 0.015 235);
   --text: oklch(0.22 0.018 260);
-  --muted: oklch(0.5 0.025 255);
-  --faint: oklch(0.63 0.02 255);
+  --muted: oklch(0.44 0.025 255);
+  --faint: oklch(0.5 0.02 255);
   --border: oklch(0.82 0.018 250);
   --accent: oklch(0.56 0.13 205);
   --accent-strong: oklch(0.48 0.14 205);
@@ -185,7 +185,7 @@ a:focus-visible {
   border: 0;
   background: transparent;
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 0.9rem;
   transition: color 160ms ease;
 }
 
@@ -275,7 +275,7 @@ a:focus-visible {
   background: var(--surface-raised);
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   letter-spacing: 0.04em;
   transition:
     background-color 200ms ease,
@@ -465,7 +465,7 @@ a:focus-visible {
   background: transparent;
   color: var(--text);
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -497,7 +497,7 @@ a:focus-visible {
   border: 1px solid var(--border);
   background: color-mix(in oklab, var(--background) 70%, transparent);
   font-family: var(--font-mono);
-  font-size: clamp(0.62rem, 0.85vw, 0.72rem);
+  font-size: clamp(0.72rem, 0.95vw, 0.8rem);
 }
 
 .code-block p {
@@ -586,7 +586,7 @@ a:focus-visible {
 .metric span {
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 0.57rem;
+  font-size: 0.65rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -606,7 +606,7 @@ a:focus-visible {
 .repo-heading > span {
   color: var(--faint);
   font-family: var(--font-mono);
-  font-size: 0.56rem;
+  font-size: 0.64rem;
   letter-spacing: 0.06em;
 }
 
@@ -937,9 +937,9 @@ a:focus-visible {
 .skill-group h3 {
   margin: 0 0 0.65rem;
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -957,7 +957,7 @@ a:focus-visible {
   border: 1px solid var(--border);
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 0.56rem;
+  font-size: 0.66rem;
   transition:
     border-color 150ms ease,
     color 150ms ease;
@@ -1019,7 +1019,7 @@ a:focus-visible {
 
   .tab {
     padding: 1.1rem 0;
-    font-size: 0.73rem;
+    font-size: 0.8rem;
   }
 
   .tab::after {
@@ -1184,7 +1184,7 @@ a:focus-visible {
   border-bottom: 1px solid var(--border);
   color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -1207,17 +1207,17 @@ a:focus-visible {
   margin: 0 0 0.3rem;
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 0.57rem;
+  font-size: 0.66rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .stack-group p {
   color: var(--text);
   font-family: var(--font-sans);
-  font-size: 0.82rem;
-  line-height: 1.45;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .metrics-grid {
@@ -1268,9 +1268,9 @@ a:focus-visible {
   border-bottom: 1px solid var(--border);
   color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -1279,7 +1279,7 @@ a:focus-visible {
   margin: 0.8rem 0 0;
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.75rem;
   letter-spacing: 0.015em;
 }
 
@@ -1291,9 +1291,9 @@ a:focus-visible {
   margin: 0 0 0.9rem;
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -1342,8 +1342,8 @@ a:focus-visible {
   margin: 0;
   overflow: hidden;
   font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: -0.025em;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -1357,7 +1357,7 @@ a:focus-visible {
 .featured-title h3 span {
   color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 0.56rem;
+  font-size: 0.65rem;
   font-weight: 500;
 }
 
@@ -1378,8 +1378,8 @@ a:focus-visible {
   margin: 0.8rem 0;
   overflow: hidden;
   color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.55;
+  font-size: 0.88rem;
+  line-height: 1.6;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
@@ -1394,8 +1394,8 @@ a:focus-visible {
   border: 1px solid var(--border);
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 0.56rem;
-  letter-spacing: 0.06em;
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: border-color 150ms ease;
 }
@@ -1444,7 +1444,7 @@ a:focus-visible {
   align-items: center;
   gap: 0.18rem;
   font-family: var(--font-mono);
-  font-size: 0.55rem;
+  font-size: 0.65rem;
 }
 
 .repository-footer {
@@ -1452,7 +1452,7 @@ a:focus-visible {
   margin-top: auto;
   color: var(--faint);
   font-family: var(--font-mono);
-  font-size: 0.54rem;
+  font-size: 0.66rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
@@ -1513,7 +1513,7 @@ a:focus-visible {
 .resume-entry h3 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: -0.02em;
 }
 
@@ -1527,8 +1527,8 @@ a:focus-visible {
   margin: 0;
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 0.59rem;
-  letter-spacing: 0.04em;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
   text-align: right;
   text-transform: uppercase;
 }
@@ -1536,7 +1536,7 @@ a:focus-visible {
 .education-entry > div p {
   margin: 0.18rem 0 0;
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: 0.86rem;
 }
 
 .skills-section {

@@ -23,10 +23,7 @@ export const stack = [
   },
 ] as const;
 
-export const metrics = [
-  { label: "Years Experience", value: "4+" },
-  { label: "Public Repos", value: "20+" },
-] as const;
+export const metrics = [{ label: "Years Experience", value: "4+" }] as const;
 
 // Identifiers only: displayed names and languages always come from GitHub.
 export const featuredRepos = [

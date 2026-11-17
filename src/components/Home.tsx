@@ -1,8 +1,11 @@
 import { Mail } from "lucide-react";
 import { metrics, profile, stack } from "../data";
+import { useGitHubPublicRepoCount } from "../hooks/useGitHubPublicRepoCount";
 import { GitHubIcon, LinkedInIcon } from "./BrandIcons";
 
 export function Home() {
+  const publicRepoCount = useGitHubPublicRepoCount();
+
   return (
     <section
       className="home-layout"
@@ -79,6 +82,22 @@ export function Home() {
                   <span>{metric.label}</span>
                 </div>
               ))}
+              <div
+                className="metric"
+                title={
+                  publicRepoCount.data !== undefined
+                    ? "Public repository count from GitHub, refreshed every five minutes"
+                    : publicRepoCount.isPending
+                      ? "Loading public repository count from GitHub"
+                      : "Public repository count is temporarily unavailable"
+                }
+              >
+                <strong aria-live="polite">
+                  {publicRepoCount.data ??
+                    (publicRepoCount.isPending ? "…" : "—")}
+                </strong>
+                <span>Public Repos</span>
+              </div>
             </div>
           </section>
 
