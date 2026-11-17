@@ -36,6 +36,10 @@ export const featuredRepos = [
   "neetcode-submissions",
 ] as const;
 
+export const projectDemoUrls: Record<string, string> = {
+  ReactDex: "/ReactDex/",
+};
+
 export const experience = [
   {
     role: "Software Engineer II",

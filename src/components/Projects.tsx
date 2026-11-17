@@ -1,5 +1,5 @@
 import { ArrowUpRight, GitFork, RefreshCw, Star } from "lucide-react";
-import { featuredRepos, profile } from "../data";
+import { featuredRepos, profile, projectDemoUrls } from "../data";
 import { useGitHubRepositories } from "../hooks/useGitHubRepositories";
 import type { Repository } from "../types";
 
@@ -107,6 +107,17 @@ export function Projects({ query }: ProjectsProps) {
                   <p>{repository.description ?? "No description provided."}</p>
                   <div className="card-footer">
                     <LanguageBadge language={repository.language} />
+                    {projectDemoUrls[repository.name] && (
+                      <a
+                        className="language-badge"
+                        href={projectDemoUrls[repository.name]}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`Open ${repository.name} live demo`}
+                      >
+                        Live Demo <ArrowUpRight size={12} />
+                      </a>
+                    )}
                   </div>
                 </article>
               ))}

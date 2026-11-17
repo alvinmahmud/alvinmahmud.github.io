@@ -1385,6 +1385,10 @@ a:focus-visible {
 }
 
 .card-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
   margin-top: auto;
 }
 

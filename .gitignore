@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .vite/
+.reactdex-build/
 *.tsbuildinfo
 .DS_Store
 .jekyll-cache/

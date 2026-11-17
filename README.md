@@ -11,6 +11,25 @@ npm install
 npm run dev
 ```
 
+## ReactDex demo
+
+The Pages workflow checks out `alvinmahmud/ReactDex` at `main`, builds it with the `/ReactDex/` base path, and includes its output in `dist/ReactDex/`. The featured ReactDex card links to both the GitHub source and the live demo. ReactDex source stays in its own repository.
+
+To preview the combined deployment locally:
+
+```bash
+git clone --depth 1 https://github.com/alvinmahmud/ReactDex.git .reactdex-build
+npm ci --prefix .reactdex-build
+npm run build
+npm run build --prefix .reactdex-build -- --base=/ReactDex/
+cp -R .reactdex-build/dist dist/ReactDex
+npm run preview
+```
+
+Clone only once; on later runs, update the ignored `.reactdex-build` checkout with `git -C .reactdex-build pull --ff-only`. Copy into a freshly built portfolio `dist/` as above. Visit `/ReactDex/` on the preview server. The portfolio dev server does not build or serve ReactDex.
+
+ReactDex changes are included on the next portfolio deployment. After updating ReactDex, rerun the portfolio's **Deploy portfolio to GitHub Pages** workflow to publish the latest demo without changing the portfolio source.
+
 ## Contact form
 
 The Contact tab uses Formspree to forward messages to your inbox. Sending stays disabled until the endpoint is configured; visitors can still use the direct email and social links.

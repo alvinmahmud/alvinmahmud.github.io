@@ -33,6 +33,27 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Checkout ReactDex
+        uses: actions/checkout@v4
+        with:
+          repository: alvinmahmud/ReactDex
+          ref: main
+          path: .reactdex-build
+          persist-credentials: false
+
+      - name: Install ReactDex dependencies
+        working-directory: .reactdex-build
+        run: npm ci
+
+      - name: Build ReactDex
+        working-directory: .reactdex-build
+        env:
+          VITE_BASE_URL: /ReactDex/
+        run: npm run build -- --base=/ReactDex/
+
+      - name: Include ReactDex in site artifact
+        run: cp -R .reactdex-build/dist dist/ReactDex
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
