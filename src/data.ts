@@ -11,6 +11,9 @@ export const profile = {
   tagline: "Full stack engineer building products from frontend to backend.",
 } as const;
 
+// Public Formspree endpoint; leave empty until the receiving form is configured.
+export const contactFormEndpoint: string = "";
+
 export const stack = [
   { title: "Frontend", items: ["React", "TypeScript", "HTML", "CSS"] },
   {

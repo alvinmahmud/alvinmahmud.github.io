@@ -6,6 +6,7 @@ const tabs: Array<{ id: TabId; label: string }> = [
   { id: "home", label: "Home" },
   { id: "work", label: "Projects" },
   { id: "resume", label: "Resume" },
+  { id: "contact", label: "Contact" },
 ];
 
 interface HeaderProps {

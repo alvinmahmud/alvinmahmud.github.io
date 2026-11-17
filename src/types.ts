@@ -1,4 +1,4 @@
-export type TabId = "home" | "work" | "resume";
+export type TabId = "home" | "work" | "resume" | "contact";
 export type Theme = "dark" | "light";
 
 export interface Repository {

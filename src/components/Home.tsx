@@ -1,7 +1,6 @@
-import { Mail } from "lucide-react";
 import { metrics, profile, stack } from "../data";
 import { useGitHubPublicRepoCount } from "../hooks/useGitHubPublicRepoCount";
-import { GitHubIcon, LinkedInIcon } from "./BrandIcons";
+import { SocialLinks } from "./SocialLinks";
 
 export function Home() {
   const publicRepoCount = useGitHubPublicRepoCount();
@@ -102,27 +101,7 @@ export function Home() {
           </section>
 
           <footer className="connection-row">
-            <div className="social-links" aria-label="Contact links">
-              <a href={`mailto:${profile.email}`} aria-label="Email Alvin">
-                <Mail size={17} />
-              </a>
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
-              >
-                <GitHubIcon />
-              </a>
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-              >
-                <LinkedInIcon />
-              </a>
-            </div>
+            <SocialLinks />
             <span>SECURED_CONNECTION_TLS_1.3</span>
           </footer>
         </div>

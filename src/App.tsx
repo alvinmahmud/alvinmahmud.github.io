@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Contact } from "./components/Contact";
 import { EditorFrame } from "./components/EditorFrame";
 import { Header } from "./components/Header";
 import { Home } from "./components/Home";
@@ -14,11 +15,12 @@ const tabDetails: Record<
   home: { filename: "index.tsx", bodyClassName: "home-editor-body" },
   work: { filename: "work.tsx" },
   resume: { filename: "resume.md", meta: "UTF-8  READ ONLY" },
+  contact: { filename: "contact.tsx" },
 };
 
 function getTabFromHash(): TabId {
   const hash = window.location.hash.slice(1).toLowerCase();
-  if (hash === "work" || hash === "resume") return hash;
+  if (hash === "work" || hash === "resume" || hash === "contact") return hash;
   if (hash === "projects" || hash === "repos") return "work";
   return "home";
 }
@@ -80,6 +82,7 @@ function App() {
               {activeTab === "home" && <Home />}
               {activeTab === "work" && <Projects query={repositories} />}
               {activeTab === "resume" && <Resume />}
+              {activeTab === "contact" && <Contact />}
             </div>
           </EditorFrame>
         </div>
